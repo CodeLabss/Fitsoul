@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer SignUp Form</title>
+    <link rel="stylesheet" href="from.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet"> 
+            
+            <!-- Font Awesome -->
+        <link href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+            
+            <!-- Bootstrap Bundle with Popper -->
+        <script src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> </script> 
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+        </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    margin:0;
+    /* font-family: "Roboto", sans-serif; */
+    /* box-sizing: border-box; */
+}
+
+ body {
+    /* background-image: url(bg2.jpg); */
+    
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,91,0,1) 100%);
+    height:100%; 
+    padding-top: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-style: normal;
+    color: white;
+     
+}
+
+.form-footer {
+    display:flex;
+    /* justify-content: flex-end; */
+    padding:10px;
+}
+
+#registration-page {
+    height:100%;
+    /* display:flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* overflow-y: auto; */
+     /* Changed from overflow: scroll; */
+}
+
+
+.signup-form  {
+    flex:1;
+    /* max-width:600px; */
+    border-radius: 10px;
+    background-color: #EFF0F1;
+    border: 1px solid #999;
+    margin-top: auto;
+    margin-bottom:  auto;
+  }
+  
+/* FORM HEADER */
+.form-header {
+    padding:15px ;
+    border-bottom:1px solid #cccccc;
+}
+
+.form-header h1 {
+    font-size: 28px;
+    text-align:center;
+    color:#666;
+}
+
+/* FORM BODY */
+.form-body {
+    background:white;
+    padding:5px 10px;
+}
+
+.row {
+    display:flex; 
+}
+  
+.input-group {
+    flex:1;  
+    display:flex;
+    flex-direction:column; 
+    margin:10px 5px;
+}
+
+/* FORM BODY - Gender & Hobbies */
+.radio-group, .checkbox-group {
+    display:flex;
+  }
+  
+  .radio-group div, .checkbox-group div {
+    flex:1;
+  }
+  
+  .radio-group label, .checkbox-group label  {
+    color:#666;
+    cursor:pointer;
+  }
+/* FORM BODY - Source of Income & Income */
+  .range-group {
+    display:flex;
+  }
+
+  .range-group input {
+      flex:1;
+  }
+
+  .range-group label {
+    margin-left:10px;
+    background-color: #ffee00;
+    color:white;
+    border-radius: 5px;
+    padding:5px;
+    font-size:17px;
+    text-align:center;
+  }
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 500px) {
+    .row{
+      flex-direction:column; 
+    }
+
+    .btn {
+        flex:1;
+    }
+}
+
+
+/* FORM FOTTER */
+.form-footer {
+width:100%;
+
+    /* display:flex; */
+    /* justify-content: flex-end; */
+    padding:10px;
+}
+
+.btn {
+    padding:10px 20px;
+    /* background-color: rgba(255,91,0,1); */
+    
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,91,0,1) 100%);
+    font-size:17px;
+    border:none;
+    border-radius:5px;
+    color:#f5e3bc;  
+    cursor:pointer;
+    flex:1;
+
+ }
+
+ /* INPUT*/
+
+ label {
+  color:#000000;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"] ,
+input[type="password"],
+input[type="file"],
+input[type="number"],
+select,
+textarea  {
+width:100%;
+
+font-size: 18px;
+height: 34px;
+padding-left: 10px;
+padding-right: 10px;
+color: #666;
+border: 1px solid #d6d6d6;
+border-radius: 4px;
+background: white;
+outline: none;
+}
+
+
+textarea {
+  resize: none;
+ height:100px;
+}
+    </style>
+</head>
+
+
+<body>
+    <div class="container " style="width: 800px; height: 900px;">
+        <section id="registration-page">
+            <form class="signup-form" action="connect.php" method="post">
+                <!-- FORM HEADER -->
+                <div class="">
+                    <img src="timg2.jpg" class="d-block w-100" alt="...">
+                  </div>
+                <!-- FORM BODY -->
+                <div class="form-body">
+                    
+                    <div class="row">
+                        <div class="input-group">
+                             <label for="gymname"> Gym Name:  </label>
+
+                            <span> <input type="text" placholder="Enter your first name" id="gymname" name="gymname"> </span> 
+                        </div>
+
+                        <div class="row border m-2">
+                            <div class="input-group">
+                                <label for="gym_add"> Gym Address:</label>
+                                <textarea name="gym_add" id="gym_add"> </textarea>
+                            </div>
+                        </div>
+                        <!-- Upload Profile Picure & Age -->
+                        <div class="row">
+
+                            <div class="input-group mb-3">
+                               <label for=""><span class="input-group-text">State</span></label> 
+                                    <select name="" id="">
+                                        <option> state </option>
+                                    </select>
+
+                                    <label for=""><span class="input-group-text">City</span></label> 
+                                    <select name="" id="">
+                                        <option> City </option>
+                                    </select>
+                              </div>
+
+                            
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="">District</label>
+                                <select name="" id="">
+                                    <option>Manager</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="">Pincode</label>
+                                <select name="" id="">
+                                    <option>Manager</option>
+                                </select>
+                            </div>
+                        
+                    </div>
+                    <!-- Email -->
+                    <div class="row">
+                        <div class="input-group">
+                            <label for="email">Email </label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password: </label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        
+                    </div>
+
+                    
+  <div class="input-group mb-3">
+    <span class="input-group-text">FirstName</span>
+    
+    <input type="text" class="form-control" placeholder="First Name">
+     <span class="input-group-text">LastName</span>
+
+    <input type="text" class="form-control" placeholder="Last Name">
+  </div>
+                    
+                    <!-- Gender & Hobbies -->
+                    <!-- <div class="row">
+                        <div class="input-group">
+                            <label>Your Name: </label>
+                            <input type="text" placholder="Enter your email address">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group">
+                                <label>Contact Number: </label>
+                                <input type="number" name="contacte1">
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Source of Income & Income -->
+                    <div class="row">
+                        <div class="input-group">
+                            <label for="">Your Post:</label>
+                            <select name="" id="">
+                                <option>Manager</option>
+                                <option>Gym Owner</option>
+                                <option>Receptionist</option>
+                            </select>
+                        </div>
+    
+                        <!-- <div class="input-group">
+                            <label>DOB:</label>
+                            <input type="date" name="" id="d1"  >
+                            <div id="output"></div>
+                        </div> -->
+                        <div class="input-group">
+                            <label>Age : </label>
+                            <input type="number" placholder="">
+                        </div>
+                        
+                    </div>
+                    <!--  Bio   -->
+                    
+                    </div>
+    
+                    
+                </div>
+                <!--  FORM FOOTER   -->
+                <div class="form-footer " >
+                    <!-- <input type="sumbit" class="btn btn-primary"> -->
+                    <button type="submit" class="btn mx-auto align-self-center  btn-lg btn-block"> Submit </button>
+                </div>
+            </form>
+        </section>
+    </div>
+    
+
+    
+
+          
+        
+  
+  
+  
+      
+  
+  
+  <!-- footer -->
+       
+      <!-- <footer class="footer "> 
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-md-3"> 
+                    <h2><img src="logo.jpg" width="150px" height="150px" alt=""></h2> 
+                    <p> 
+                       607 A, Ecstacy BuisnessPark, Acuty Educare 
+                       <br>
+                       Phone: 1234567890
+                       <br>
+                       Email:acutiy@gmail.com
+                         
+                   </p> 
+                </div> 
+                <div class="col-md-3"> 
+                    
+                </div> 
+                <div class="col-md-3"> 
+                    <h5>Sitemap</h5> 
+                    <ul class="list-unstyled"> 
+                        <li><a href="#" class="nav-link">Home</a></li> 
+                        <li><a href="#" class="nav-link">Products</a></li> 
+                        <li><a href="#" class="nav-link">About Us</a></li> 
+                        <li><a href="#" class="nav-link">Terms & Conditions</a></li> 
+                        <li><a href="#" class="nav-link">Privacy Policy</a></li> 
+                    </ul> 
+                </div> 
+                <div class="col-md-3"> 
+                    <h5>Follow Us</h5> 
+                    <ul class="list-inline footer-links"> 
+                        <li class="list-inline-item"> 
+                            <a href="#"> 
+                                <i class="fab fa-facebook"></i> 
+                            </a> 
+                        </li> 
+                        <li class="list-inline-item"> 
+                            <a href="#"> 
+                                <i class="fab fa-twitter"></i> 
+                            </a> 
+                        </li> 
+                        <li class="list-inline-item"> 
+                            <a href="#"> 
+                                <i class="fab fa-instagram"></i> 
+                            </a> 
+                        </li> 
+                        <li class="list-inline-item"> 
+                            <a href="#"> 
+                                <i class="fab fa-linkedin"></i> 
+                            </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> 
+            <hr> 
+            <div class="row"> 
+                <div class="col-md-6"> 
+                    <p>© 2024 Your Website. All rights reserved.</p> 
+                </div> 
+                <div class="col-md-6 text-end"> 
+                    <ul class="list-inline footer-links"> 
+                        <li class="list-inline-item"> 
+                            <a href="#">Privacy Policy</a> 
+                        </li> 
+                        <li class="list-inline-item"> 
+                            <a href="#">Terms of Service</a> 
+                        </li> 
+                        <li class="list-inline-item"> 
+                            <a href="#">Sitemap</a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> 
+        </div> 
+    </footer>  
+    
+</body>
+
+</html> -->

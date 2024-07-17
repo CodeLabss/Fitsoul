@@ -1,0 +1,980 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Sign Up Form</title>
+
+    <link rel="stylesheet" href="from.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet"> 
+            
+        <link href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+            
+        <script src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> </script> 
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+        <style>
+                @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+                @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+                body{
+                    font-family: "Space Grotesk", sans-serif;
+
+                }
+
+
+                .form-group {
+            margin-bottom: 10px; 
+        }
+
+        input[type="text"] {
+    padding: 5px; 
+}
+
+
+input[type="text"], label {
+    margin: 0 !important; 
+    padding: 0 !important; 
+}
+
+
+
+                
+
+       
+
+
+
+        </style>
+
+
+</head>
+<body>
+
+<h1 class="display-6">Employer signup-form</h1>
+     <div class="container pt-5"> 
+
+        
+        <label for="test">Gym Name:</label> 
+        <span><input name="test" id="test" type="text" placeholder="Enter your Gym Name" /> </span> 
+        
+        <label for="test">Gym Address:</label> 
+        <span><input name="test" id="test" type="text" placeholder="Enter your Gym Address" /> </span> 
+
+    </div>
+
+    <div class="container pt-5"> 
+
+        
+        <label for="test">Gym Name:</label> 
+        <span><input name="test" id="test" type="text" placeholder="Enter your Gym Name" /> </span> 
+        
+        <label for="test">Gym Address:</label> 
+        <span><input name="test" id="test" type="text" placeholder="Enter your Gym Address" /> </span> 
+
+    </div> 
+
+     <div class="container pt-5">
+        <div class="form-group">
+            <label for="gymName">Gym Name:</label>
+            <input name="gymName" id="gymName" type="text" placeholder="Enter your Gym Name" />
+        </div>
+        <div class="form-group">
+            <label for="gymAddress">Gym Address:</label>
+            <input name="gymAddress" id="gymAddress" type="text" placeholder="Enter your Gym Address" />
+        </div>
+    </div> 
+
+    <div class="container pt-5">
+        <div class="form-group">
+            <label for="gymName">Gym Name:</label>
+          <span> <input name="gymName" id="gymName" type="text" placeholder="Enter your Gym Name"> </span>  
+        
+            <label for="gymName">Gym Name:</label>
+          <span> <input name="gymName" id="gymName" type="text" placeholder="Enter your Gym Name"> </span>  
+        </div>
+    </div>
+    
+    
+
+
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- not good -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Form with Bootstrap</title>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.input-group-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 599px) {
+    .input-group-text {
+        flex-basis: 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <img src="logo.jpg" width="100px" height="100px" alt="Registration Image" class="img-fluid mb-4" style="max-width: 100%;">
+
+    <form class="form-horizontal">
+        
+  <div class="input-group mb-3 ">
+    <span class="input-group-text">  Gym Name: </span>
+    
+    <input type="text" class="form-control" placeholder="Enter your Gym Name">
+
+    <div class="input-group mb-3 ">
+
+    <span class="input-group-text">  Gym Address: </span>
+    
+
+    <input type="text" class="form-control" placeholder="Enter your gym address">
+  </div>
+
+  
+
+  <div class="input-group mb-3 pt-2">
+    <span class="input-group-text"> &nbsp;&nbsp; State: &nbsp;&nbsp;</span>
+    <select name="state" id="state" class="form-control" style="height: 38px;" >
+        <option>Enter your state</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+
+    <span class="input-group-text">District:</span>
+    <select name="state" id="state" class="form-control" style="height: 38px;" >
+        <option>Enter your state</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+  </div>
+
+  <div class="input-group mb-3 ">
+    <span class="input-group-text">  Pincode: </span>
+    
+    <input type="number" class="form-control" placeholder="Enter Pincode">
+
+    <span class="input-group-text">  Your Name: </span>
+    
+
+    <input type="text" class="form-control" placeholder="Enter your Name">
+  </div>
+
+  <div class="input-group mb-3 ">
+    <span class="input-group-text">  Your Post: </span>
+<span class="input-group-text">District:</span> 
+    <select name="state" id="state" class="form-control" style="height: 38px;" >
+        <option>Enter your Post</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+
+    <span class="input-group-text">  Contact Number: </span>
+    
+
+    <input type="text" class="form-control" placeholder="Enter your Number">
+  </div>
+
+  <div class="input-group mb-3 ">
+    <span class="input-group-text">  Email-Id: </span>
+    
+    <input type="email" class="form-control" placeholder="Enter your Email-id">
+
+    <span class="input-group-text">  Password: </span>
+    
+
+    <input type="password" class="form-control" placeholder="Enter your Password">
+  </div>
+
+  <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackbox 1</title>
+    <link rel="stylesheet" href="from.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet"> 
+            
+        <link href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+            
+        <script src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> </script> 
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <img src="" class="img-fluid mb-4" alt="Image">
+        <form>
+            <div class="form-group row pb-2">
+              <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Gym Name:</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Gym Name">
+              </div>
+            </div>
+            <div class="form-group row ">
+              <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Gym Adress:</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Gym Address">
+              </div>
+            </div>
+            <div class="form-group row pt-2">
+              <label for="exampleInputEmail1" class="col-sm-2 col-form-label">State:</label>
+              <div class="col-sm-5">
+                <select name="state" id="state" class="form-control" style="height: 38px;" >
+                  <option>Enter your state</option>
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+              <div class="col-sm-5">
+                 <label for="exampleInputEmail1" class="col-sm-2 col-form-label pl-0">District:</label> 
+                <select name="district" id="district" class="form-control" style="height: 38px;">
+                  <option value="district1">Enter your district</option>
+                  <option value="district2">District 2</option>
+                  <option value="district3">District 3</option>
+                  <option value="district4">District 4</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Blackbox 2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .image {
+      width: 100%;
+      height: 150px;
+      background-image: url('https://via.placeholder.com/600x150');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image"></div>
+    <form>
+      <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="email" class="col-sm-3 col-form-label">Email:</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
+        <div class="col-sm-9">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="country" class="col-sm-3 col-form-label">Country:</label>
+        <div class="col-sm-9">
+          <select class="form-select" id="country">
+            <option value="">Select a country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="mexico">Mexico</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="confirm-password" class="col-sm-3 col-form-label">Confirm Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+
+<html>
+<head>
+  <title>Registration Page 3</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <style>
+   .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+   .image {
+      width: 100%;
+      height: 150px;
+      background-image: url('https://via.placeholder.com/600x150');
+      background-size: cover;
+      background-position: center;
+    }
+    /* Make the form responsive for mobile devices */
+    @media (max-width: 768px) {
+     .container {
+        margin: 20px auto;
+        padding: 10px;
+      }
+     .row {
+        flex-direction: column;
+      }
+     .col-sm-3 {
+        width: 100%;
+        padding-bottom: 10px;
+      }
+     .col-sm-9 {
+        width: 100%;
+      }
+      label {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      input[type="text"], input[type="email"], input[type="password"], select {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+      }
+     .form-check-label {
+        font-size: 16px;
+      }
+      button[type="submit"] {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image"></div>
+    <form>
+      <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="email" class="col-sm-3 col-form-label">Email:</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
+        <div class="col-sm-9">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="country" class="col-sm-3 col-form-label">Country:</label>
+        <div class="col-sm-9">
+          <select class="form-select" id="country">
+            <option value="">Select a country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="mexico">Mexico</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="confirm-password" class="col-sm-3 col-form-label">Confirm Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page 4</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+  <style>
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: 150px;
+  background-image: url('https://via.placeholder.com/600x150');
+  background-size: cover;
+  background-position: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 10px;
+  font-size: 16px; /* Base font size for desktop */
+}
+
+.form-label {
+  font-size: 16px; /* Base font size for desktop */
+  margin-bottom: 10px;
+}
+
+.radio-button {
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    padding: 8px;
+    font-size: 14px; /* Slightly smaller font size for mobile */
+  }
+  
+  .form-label {
+    font-size: 14px; /* Slightly smaller font size for mobile */
+    margin-bottom: 8px;
+  }
+  
+  .radio-button {
+    margin-right: 10px;
+  }
+}
+</style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image"></div>
+    <form>
+      <div class="form-group row">
+        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label">Email:</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
+        <div class="col-sm-9">
+          <div class="form-check form-check-inline radio-button">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline radio-button">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="country" class="col-sm-3 col-form-label">Country:</label>
+        <div class="col-sm-9">
+          <select class="form-select" id="country">
+            <option value="">Select a country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="mexico">Mexico</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="confirm-password" class="col-sm-3 col-form-label">Confirm Password:</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</body>
+</html> -->
+
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <img src="your-image-source.jpg" alt="Registration Image" class="img-fluid mb-4" style="max-width: 100%;">
+    <form>
+        <div class="row mb-3">
+            <label for="password" class="col-sm-3 col-form-label">Password:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="password" class="col-sm-3 col-form-label">Password:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+          </div>
+        <div class="mb-3">
+            <label for="gender" class=" col-sm-3  col-form-label">Gender:</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="country" class=" col-sm-3  col-form-label">Country:</label>
+            <div class="col-sm-9">
+                <select class="form-select" id="country">
+                    <option value="">Select a country</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="mexico">Mexico</option>
+                </select>
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>   -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Form with Bootstrap</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><style>
+    .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.input-group-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 599px) {
+    .input-group-text {
+        flex-basis: 100%;
+    }
+}
+
+.dropdown-toggle.form-control {
+  border: 1px solid #dfcdcd;
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.dropdown-menu {
+  width: 100%;
+  min-width: 0;
+  /* max-height: calc(1.5em + 0.75rem + 2px); */
+  /* overflow-y: auto; */
+}
+
+.dropdown-toggle.form-control {
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
+
+
+</style>
+</head>
+<body>
+
+   <div class="container" >
+    <img src="bg2.jpg" width="100%" height="100px" alt="" class="mt-2">
+<form action="employer_connect.php"  method="post">
+  <div class="row mt-2">
+    <div class="col-sm-6">
+            <div class="input-group  ">
+                <span  class=" input-group-text bg-primary text-white">Gym Name:</span>
+                
+                <input type="text" class="form-control" id="gymname" name="gymname" placeholder="Enter your Gym Name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                
+            </div>
+        
+    </div>   
+
+    <div class="col-sm-6">
+        <div class="input-group">
+            <span  class=" input-group-text bg-primary text-white">Gym Address:</span>
+            
+            <input type="text" class="form-control" id="gym_add" name="gym_add" placeholder="Enter your Gym Address" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            
+        </div>
+    </div>  
+  </div>
+
+  <div class="row mt-2 border p-3" >
+    <div class="col-sm-4">
+            <div class=" input-group mb-3">
+                <span  class=" input-group-text bg-primary text-white">State:</span>
+                
+</div>
+        
+    </div>   
+
+    <div class="col-sm-4">
+      <div class=" input-group mb-3">
+        <span  class=" input-group-text bg-primary text-white" >District:</span>
+        <button type="button" class="btn form-control flex-grow-1 dropdown-toggle" style="border-color: #d8cbcb" data-bs-toggle="dropdown">
+          Enter your district
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Link 1</a></li>
+          <li><a class="dropdown-item" href="#">Link 2</a></li>
+          <li><a class="dropdown-item" href="#">Link 3</a></li>
+        </ul>
+
+        
+        
+    </div>
+
+    </div>  
+    <div class="col-sm-4">
+      <div class=" input-group mb-3">
+        <span  class=" input-group-text bg-primary text-white" >Pincode:</span>
+        <button type="button" class="btn form-control flex-grow-1 dropdown-toggle" style="border-color: #d8cbcb" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Link 1</a></li>
+          <li><a class="dropdown-item" href="#">Link 2</a></li>
+          <li><a class="dropdown-item" href="#">Link 3</a></li>
+        </ul>
+
+        
+        
+    </div>
+        
+    </div>  
+  </div>
+
+  <div class="row mt-2">
+
+    <div class="col-sm-4">
+      <div class="input-group mb-3">
+          <span  class=" input-group-text bg-primary text-white">Your Name:</span>
+          
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+          
+      </div>
+  </div> 
+
+    <div class="col-sm-4">
+      <div class=" input-group mb-3">
+        <span  class=" input-group-text bg-primary text-white" >Your Post:</span>
+        <select name="post" class="form-control" id="">
+          <option value="post">Select Profile</option>
+          <option value="Receptionist">Receptionist</option>
+          <option value="Trainer">Trainer</option>
+          <option value="Trainer">Trainer</option>
+          <option value="Manager">Manager</option>
+        </select>
+
+        
+        
+    </div>
+        
+    </div>
+
+    <div class="col-sm-4">
+      <div class="input-group mb-3">
+          <span  class=" input-group-text bg-primary text-white">Contact Number:</span>
+          
+          <input type="number" class="form-control" id="contact" name="contact" placeholder="Enter your Contact number" required>
+          
+      </div>
+  </div>  
+
+ 
+  </div>
+
+
+
+  <div class="row mt-2 border p-3">
+    <div class="col-sm-4">
+      <div class="input-group mb-3 ">
+          <span  class=" input-group-text bg-primary text-white">Email-id:</span>
+          
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email-id" required>
+          
+      </div>
+  </div>   
+
+    <div class="col-sm-4">
+        <div class="input-group mb-3">
+            <span  class=" input-group-text bg-primary text-white">Password:</span>
+            
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+            
+        </div>
+    </div>
+    
+    <!-- <div class="col-sm-4">
+      <div class="input-group mb-3">
+          <span  class=" input-group-text bg-primary text-white">Re-enter password:</span>
+          
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+          
+      </div>
+  </div> -->
+
+ 
+
+
+</div>
+
+<div class="row mt-2">
+  <div class="col-sm-6">
+    <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+    <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+  </div>
+</div>
+</div>
+</form>
+   
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+
+
+// const dropdownMenu = document.querySelector('.dropdown-menu');
+// const dropdownButton = document.querySelector('.dropdown-toggle');
+// const caret = dropdownButton.querySelector('.dropdown-caret'); // or '.dropdown-caret' depending on your HTML structure
+
+// dropdownMenu.addEventListener('click', event => {
+//   if (event.target.tagName === 'A') {
+//     const selectedText = event.target.textContent;
+//     dropdownButton.textContent = selectedText;
+//     caret.style.display = 'none'; // hide the caret
+//   }
+// });
+
+const handleInput = () => {
+    const inputValue =
+        document
+            .querySelector('.form-control').value;
+    const results =
+        ["apple", "banana", "cherry",
+            "date", "elderberry"];
+    const parentElement =
+        document
+            .querySelector(".dropdown-menu");
+    const elementsToRemove =
+        document.querySelectorAll("li");
+    elementsToRemove.forEach(element => {
+        element.remove();
+    });
+    if (inputValue) {
+        const matchingWords =
+            results
+                .filter(word => word
+                    .includes(inputValue));
+        matchingWords.sort((a, b) => {
+            const indexA =
+                a.indexOf(inputValue);
+            const indexB =
+                b.indexOf(inputValue);
+            return indexA - indexB;
+        });
+        matchingWords.forEach(word => {
+            const listItem =
+                document.createElement("li");
+            const link =
+                document.createElement("a");
+            link.classList.add("dropdown-item");
+            link.href = "#";
+            link.textContent = word;
+            listItem.appendChild(link);
+            parentElement.appendChild(listItem);
+        });
+        if (matchingWords.length == 0) {
+            const listItem =
+                document.createElement('li');
+            listItem.textContent = "No Item";
+            listItem.classList.add('dropdown-item');
+            parentElement.appendChild(listItem);
+        }
+    } else {
+        results.forEach(word => {
+            const listItem =
+                document.createElement("li");
+            const link =
+                document.createElement("a");
+            link.classList.add("dropdown-item");
+            link.href = "#";
+            link.textContent = word;
+            listItem.appendChild(link);
+            parentElement.appendChild(listItem);
+        });
+    }
+}
+handleInput();
+</script>
