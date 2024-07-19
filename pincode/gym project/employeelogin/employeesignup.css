@@ -1,0 +1,15 @@
+.register .register-form {
+    padding: 10%;
+    margin-top: 10%;
+}
+  .btn-outline-primary.active,
+  .btn-outline-primary:active,
+  .btn-outline-primary:focus,
+  .btn-outline-primary.focus,
+  .btn-outline-primary:hover,
+  .btn-outline-primary.active:hover,
+  .btn-outline-primary.active:focus {
+    color: #fff; 
+    background-color: #007bff; 
+    border-color: #187cdf;
+  }
