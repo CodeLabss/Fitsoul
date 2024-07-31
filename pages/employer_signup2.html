@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                        <form action="employer_connect.php" method="post" enctype="multipart/form-data" onsubmit="return emp_validation()">
+                        <form action="employer_connect.php" method="post" enctype="multipart/form-data" name="emp_form" onsubmit="return emp_validation()">
                             <div class="row g-2 register-form" >
                                 <div class="col-md-12">
                                   <div class="form-group">
@@ -265,8 +265,11 @@
                             <div class="form-group">
                                 <label for="Photo" class="btn btn-primary d-block">
                                     <span>Upload Your Buisness Photo</span>
-                                    <input type="file" class="form-control " name="buisness_photo" id="Photo" style="display: none;">
+                                    <input type="file" class="form-control " name="buisness_photo" id="Photo" >
                                 </label>
+                                <div id="img_validate" class="text-danger"></div>
+
+
                             </div>
                         </div>
                         </div>
@@ -367,7 +370,7 @@
                   <div class="form-group ">
                     <textarea rows="4" cols="65" name="buisness_description" class="form-control" placeholder="Tell us about your buisness" id="intro"></textarea>
                   </div>
-                  <span class="text-danger" id="intro_span"></span>
+                  <span class="text-danger" id="photo"></span>
             
               </div>
             

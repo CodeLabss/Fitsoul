@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $lname = $_POST['lname']; 
    $gender = $_POST['gender'];
    $DOB = $_POST['DOB'];
-   $profile = $_POST['profile'];
-   $sector = $_POST['sector'];
+  //  $profile = $_POST['profile'];
+  //  $sector = $_POST['sector'];
    $contact1 = $_POST['contact1'];
    $contact2 = $_POST['contact2'];
    $email = $_POST['email'];
@@ -20,19 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $address2 = $_POST['address2'];
    $joining = $_POST['joining'];
 
-
    $picture = $_FILES['picture']['name'];
-  //  $temp_name = $_FILES['picture']['temp_name'];
    $temp_name_picture = $_FILES['picture']['tmp_name'];
    $folder = 'Images/'. $picture;
-
+   move_uploaded_file($temp_name_picture, $folder);
+   
 
    $CV = $_FILES['CV']['name'];
-  //  $tp_name = $_FILES['CV']['tp_name'];
-  
    $temp_name_CV = $_FILES['CV']['tmp_name'];
-   $folder = 'CV/'. $CV;
-   
+   $photo_upload = 'CV/'. $picture;
+   move_uploaded_file($temp_name_CV, $photo_upload);
+
   //  $exp_year = $_POST['exp_year'];
   //  $exp_months = $_POST['exp_months'];
    $intro = $_POST['intro'];
@@ -48,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   $sql = "INSERT INTO candidate_details 
-    (candidate_fname,candidate_mname,candidate_lname,candidate_gender, candidate_DOB ,candidate_profile, candidate_joining , candidate_contact, candidate_contact2,   candidate_email, candidate_password, candidate_address1 , candidate_address2 , candidate_picture, candidate_CV  ) 
-    VALUES ('$fname', '$mname', '$lname', '$gender', '$DOB' ,'$profile' ,'$sector',  '$contact1',  '$contact2' , '$email', '$password', '$address1', '$address2', '$picture', '$CV' )";
+    (candidate_fname,candidate_mname,candidate_lname, candidate_DOB , candidate_gender , candidate_joining , candidate_contact, candidate_contact2,   candidate_email, candidate_password, candidate_address1 , candidate_address2 , candidate_picture, candidate_CV  ) 
+    VALUES ('$fname', '$mname', '$lname', '$DOB' , '$gender' , '$joining' , '$contact1',  '$contact2' , '$email', '$password', '$address1', '$address2', '$picture', '$CV' )";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) == TRUE) {
     echo "<script>alert('Registration Successful')</script>";
 } else {
     // echo "Error: " . $sql . "<br>" . $conn->error;
@@ -239,37 +237,36 @@ echo "<script>alert('Registration Unsuccessful')</script>";
 //     echo "<script>alert('$error')</script>";
 // }
 
-if($set == true) {
+// if($set == true) {
 
-  $conn = new mysqli('localhost', 'root', '', 'details_db' );
-     if ($password === $cpassword ){
+//   $conn = new mysqli('localhost', 'root', '', 'details_db' );
+//     //  if ($password === $cpassword ){
     
-    $sql = "INSERT INTO candidate_details 
-    (candidate_fname,candidate_mname,candidate_lname,candidate_gender, candidate_DOB ,candidate_profile, candidate_joining , candidate_contact, candidate_contact2,   candidate_email, candidate_password, candidate_address1 , candidate_address2 , candidate_picture, candidate_CV  ) 
-    VALUES ('$fname', '$mname', '$lname', '$gender', '$DOB' ,'$profile' ,'$joining',  '$contact1',  '$contact2' , '$email', '$password', '$address1', '$address2', '$picture', '$CV' )";
+//     $sql = "INSERT INTO candidate_details 
+//     (candidate_fname,candidate_mname,candidate_lname,candidate_gender, candidate_DOB ,candidate_profile, candidate_joining , candidate_contact, candidate_contact2,   candidate_email, candidate_password, candidate_address1 , candidate_address2 , candidate_picture, candidate_CV  ) 
+//     VALUES ('$fname', '$mname', '$lname', '$gender', '$DOB' ,'$profile' ,'$joining',  '$contact1',  '$contact2' , '$email', '$password', '$address1', '$address2', '$picture', '$CV' )";
     
-    if ($conn->query($sql) === TRUE)  {
-      // if ($query_run) {
+//     if ($conn->query($sql) === TRUE)  {
+//       // if ($query_run) {
 
-        $_SESSION['status'] = "Registration successfull";
-        header("Location:index.html");
-     } 
-   else {
-    echo "Name contains characters";
-    echo "<script>alert('Registration Unsuccessful')</script>";
- }
- }
- else{
-  $_SESSION['status'] = "Confirm Password doesnt match ";
-}
+//         $_SESSION['status'] = "Registration successfull";
+//         header("Location:index.html");
+//      } 
+//    else {
+//     echo "Name contains characters";
+//     echo "<script>alert('Registration Unsuccessful')</script>";
+//  }
+//  }
+//  else{
+//   $_SESSION['status'] = "Confirm Password doesnt match ";
+// }
 
-if(move_uploaded_file($temp_name_picture, $picture) && move_uploaded_file($temp_name_CV, $CV)){
+// if(move_uploaded_file($temp_name_picture, $picture) && move_uploaded_file($temp_name_CV, $CV)){
 
-echo "Both files uploaded successfully";
-}
+// echo "Both files uploaded successfully";
+// }
 
-
-}
+// }
 
 
 

@@ -89,11 +89,11 @@ session_start();
                         }
                         ?> -->
 
-                <form action="candidate_connect.php" class="needs-validation" novalidate method="post" enctype="multipart/form-data" onsubmit="return validation()">
+                <form action="candidate_connect.php"  method="post" name="candidate_form" enctype="multipart/form-data" onsubmit="return validation()">
                     <div class="row g-2 register-form" >
                         <div class="col-md-4">
                           <div class="form-group">
-                              <input type="text" class="form-control" name="fname" placeholder="First Name *" id="fname" required >
+                              <input type="text" class="form-control" name="fname" placeholder="First Name *" id="fname" >
                           </div>
                         <span class="text-danger" id="fname_span"></span>
                         
@@ -102,13 +102,13 @@ session_start();
                         </div>
                         <div class="col-md-4">
                             <div class="form-group ">
-                                <input type="text" class="form-control" name="mname" placeholder="Middle Name " id="mname" required>
+                                <input type="text" class="form-control" name="mname" placeholder="Middle Name " id="mname">
                             </div>
                             <span class="text-danger" id="mname_span"></span>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group ">
-                              <input type="text" class="form-control" name="lname" placeholder="Last Name *" id="lname" required >
+                              <input type="text" class="form-control" name="lname" placeholder="Last Name *" id="lname" >
                           </div>
                           <span class="text-danger" id="lname_span"></span>
                           
@@ -118,7 +118,7 @@ session_start();
                     <div class="row g-2 register-form pt-3">
                         <div class="col-md-12 ">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email" required  >
+                                <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email"  >
                             </div>
                           <span class="text-danger" id="email_span"></span>
     
@@ -133,14 +133,14 @@ session_start();
                     <div class="row g-2 register-form pt-3">
                         <div class="col-md-6 ">
                             <div class="form-group ">
-                                <input type="password" class="form-control" placeholder="Password *" name="password" id="pass" required  >
+                                <input type="password" class="form-control" placeholder="Password *" name="password" id="pass"  >
                             </div>
                             <!-- <div class="error" name="error"></div> -->
                           <span class="text-danger" id="pass_span"></span>
                         </div>
                         <div class="col-md-6 ">
                             <div class="form-group">
-                                <input type="password" class="form-control" name="cpassword" id="cpass" placeholder="Confirm Password *"  required >
+                                <input type="password" class="form-control" name="cpassword" id="cpass" placeholder="Confirm Password *"  >
                             </div>
                           <span class="text-danger" id="cpass_span"></span>
     
@@ -150,8 +150,8 @@ session_start();
                     <div class="row g-2 register-form pt-3">
                       <div class="col-md-6 ">
                           <div class="form-group">
-                              <!-- <input type="number" class="form-control" name="contact1" placeholder="Your Phone number *" id="" required/> -->
-                              <input type="number" minlength="10" maxlength="10" name="contact1" class="form-control" placeholder="Your Phone *" id="phone" required >
+                              <!-- <input type="number" class="form-control" name="contact1" placeholder="Your Phone number *" id=""/> -->
+                              <input type="number" minlength="10" maxlength="10" name="contact1" class="form-control" placeholder="Your Phone *" id="phone" >
     
                           </div>
                           <span class="text-danger" id="contact1_span"></span>
@@ -159,7 +159,7 @@ session_start();
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="number" minlength="10" maxlength="10" name="contact2" class="form-control" placeholder="Your Alternate Phone number " id="phone2" required >
+                              <input type="number" minlength="10" maxlength="10" name="contact2" class="form-control" placeholder="Your Alternate Phone number " id="phone2" >
                           </div>
                           <span class="text-danger" id="contact2_span"></span>
     
@@ -184,10 +184,10 @@ session_start();
                         <div class="form-group">
                             <!-- <input type="number" minlength="10" maxlength="10" name="joining" class="form-control" placeholder="Immediate Joining*"  /> -->
     
-                            <select  class="form-select" id="joining" name="joining" id="joining" required >
+                            <select  class="form-select" id="joining" name="joining" id="joining" >
                                 <option  selected disabled > Immediate Joining </option>
-                                 <option>Yes</option>
-                                <option>No</option>
+                                 <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                             </select>
                         <!-- </div> -->
                     </div>
@@ -198,7 +198,7 @@ session_start();
                     <div class="row g-2 register-form pt-3">
                       <div class="col-md-6 ">
                           <div class="form-group " >
-                              <select class="form-select"  name="profile "  id="profile" required>
+                              <select class="form-select"  name="profile "  id="profile">
                                   <option selected disabled>Select your Profile</option>
                                   <option value="Trainer">Trainer</option>
                                   <option value="Massager">Massager</option>
@@ -253,10 +253,10 @@ session_start();
                     <div class="form-group">
                         <label for="Photo" class="btn btn-primary d-block">
                             <span>Upload Your Photo</span>
-                            <input type="file" class="form-control " name="picture" id="photo" style="display: none;">
+                            <input type="file" class="form-control" name="picture" id="photo">
                         </label>
                     </div>
-                    <span class="text-danger" id="photo_span"></span>
+                    <span class="text-danger" id="photo_validate"></span>
     
                 </div>
                 </div>
@@ -445,7 +445,7 @@ session_start();
                 </label>
                   <input type="file" class="form-control" id="CV" name="CV" >
           </div>
-        <span class="text-danger" id="CV_valid"></span>
+        <span class="text-danger" id="CV_validate"></span>
     
       </div>
     </div>
@@ -565,7 +565,7 @@ session_start();
   }
 </script> -->
 
-<script src="js/validation.js"></script>
+<script src="js/candidate_validation.js"></script>
 <script>
     (() => {
   'use strict'
