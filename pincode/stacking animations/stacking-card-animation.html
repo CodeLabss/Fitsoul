@@ -1,0 +1,616 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacking card Animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' id='Jquery-js'></script> 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' id='slickjs-js'></script>
+    <link rel="stylesheet" href="web.css">
+    <link rel='stylesheet' id='tags-css'  href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.6.0/bootstrap-tagsinput.min.js' media='all' />
+
+    <style>
+      :root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
+}
+
+#cards {
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+}
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+
+#card_4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+@supports (animation-timeline: works) {
+
+	@scroll-timeline cards-element-scrolls-in-body {
+		source: selector(body);
+		scroll-offsets:
+			/* Start when the start edge touches the top of the scrollport */
+			selector(#cards) start 1,
+			/* End when the start edge touches the start of the scrollport */
+			selector(#cards) start 0
+		;
+		start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+		end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+		time-range: 4s;
+	}
+
+	.card {
+		--index0: calc(var(--index) - 1); /* 0-based index */
+		--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+		--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+	}
+	
+	.card__content {
+		transform-origin: 50% 0%;
+		will-change: transform;
+
+		--duration: calc(var(--reverse-index0) * 1s);
+		--delay: calc(var(--index0) * 1s);
+
+		animation: var(--duration) linear scale var(--delay) forwards;
+		animation-timeline: cards-element-scrolls-in-body;
+	}
+
+	@keyframes scale {
+		to {
+			transform:
+				scale(calc(
+					1.1
+					-
+					calc(0.1 * var(--reverse-index))
+				));
+		}
+	}
+}
+
+/** DEBUG **/
+
+#debug {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+#debug::after {
+  content: " Show Debug";
+  margin-left: 1.5em;
+  color: white;
+  white-space: nowrap;
+}
+
+#debug:checked ~ main {
+  --outline-width: 1px;
+}
+
+
+/** PAGE STYLING **/
+
+* { /* Poor Man's Reset */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: rgb(58 29 43);
+	color: rgb(255, 255, 255);
+	text-align: center;
+
+	font-size: calc(1em + 0.5vw);
+}
+
+header,
+main {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+header {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+#cards {
+	list-style: none;
+	outline: calc(var(--outline-width) * 10) solid blue;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--numcards), var(--card-height));
+	gap: var(--card-margin);
+}
+
+.card {
+	outline: var(--outline-width) solid hotpink;
+}
+
+.card__content {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgb(230, 27, 27);
+	color: rgb(10, 5, 7);
+	border-radius: 1em;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+
+	align-items: stretch;
+	outline: var(--outline-width) solid lime;
+}
+
+.card__content > div {
+	grid-area: text;
+	width: 80%;
+	place-self: center;
+	text-align: left;
+
+	display: grid;
+	gap: 1em;
+	place-items: start;
+}
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}
+
+.card__content > figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 3.5em;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 2.5em;
+}
+
+p {
+	font-family: sans-serif;
+	font-weight: 300;
+	line-height: 1.42;
+}
+
+.btn {
+	background: rgb(188 87 36);
+	color: rgb(255 255 255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+aside {
+	width: 50vw;
+	margin: 0 auto;
+	text-align: left;
+}
+
+aside p {
+	margin-bottom: 1em;
+}
+    </style>
+</head>
+<body class="web">
+    
+    <div class="container">
+        <section class="testimonials_new_slider_section">
+            <div class="maincontainertwo">
+              
+              <div class="testimonials_new_slider_sec">
+                 <div>
+                  <ul id="cards">
+                     <li class="card" id="card_1">
+                        <div class="card__content">
+                           <div class="testimonials_slider">
+                              <div class="row">
+                                 <div class="col-xl-3 col-sm-12">
+                                    <div class="testimonials_person">
+                                       <figure>
+                                          <img src="gym4.jpg"  class="img-fluid lazyload" >
+
+                                       </figure>
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-8 col-sm-12">
+                                    <div class="new_testimonial_section">
+                                       <h4> Pranali Naik </h4>
+                                       <p> BSCIT SEM 5 <br>
+                                           BSCIT SEM 5 - 9.3 CGPA 
+                                       </p>
+                                       <img src="images/star1.png" class="star lazyload" >
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="testimonials_content_sec">
+                                <p> I am pleased to share with you my thoughts on BScIT, a program that I recently completed. First and foremost, I must say that my experience in pursuing this degree was nothing short of remarkable. The program provided me with the necessary knowledge, skills and expertise to succeed in the field of information technology.
+                                </p>
+                              </div>
+                           </div>
+                           <figure>
+                                          <img src="gym4.jpg"  class="img-fluid lazyload" >
+
+                                       </figure>
+                        </div>
+                        
+                     </li>
+                     
+                     <li class="card" id="card_2">
+                        <div class="card__content">
+                           <div class="testimonials_slider">
+                              <div class="row">
+                                 <div class="col-xl-3 col-sm-12">
+                                    <div class="testimonials_person">
+                                       <figure>
+                                          <img src="gym4.jpg"  class="img-fluid lazyload" >
+
+                                       </figure>
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-8 col-sm-12">
+                                    <div class="new_testimonial_section">
+                                       <h4> Pranali Naik 2</h4>
+                                       <p> BSCIT SEM 5 <br>
+                                           BSCIT SEM 5 - 9.3 CGPA 
+                                       </p>
+                                       <img src="images/star1.png" class="star lazyload" >
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="testimonials_content_sec">
+                                <p> I am pleased to share with you my thoughts on BScIT, a program that I recently completed. First and foremost, I must say that my experience in pursuing this degree was nothing short of remarkable. The program provided me with the necessary knowledge, skills and expertise to succeed in the field of information technology.
+                                </p>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </li>
+                  </ul>
+                     
+                 </div>
+                 <div>
+                    <!-- <div class="testimonials_slider">
+                       <div class="row">
+                          <div class="col-xl-3 col-sm-12">
+                             <div class="testimonials_person">
+                                <img src="images/nimita1.png" class="img-fluid lazyload" >
+                             </div>
+                          </div>
+                          <div class="col-xl-8 col-sm-12">
+                             <div class="new_testimonial_section">
+                                <h4> Nimita Mhatre </h4>
+                                   <p> BSCIT SEM 5<br>
+                                      BSCIT SEM 5 - 9.5 CGPA
+                                   </p>
+                                <img src="images/star1.png" class="star lazyload" >
+                             </div>
+                          </div>
+                       </div>
+                       <div class="testimonials_content_sec">
+                             <p>I would highly recommend the BScIT program to anyone interested in pursuing a career in the field of information technology. 
+                             The program provides a solid foundation and equips students with the necessary skills and knowledge to succeed in this rapidly evolving industry  </p>
+                       </div>
+                    </div>
+                 </div>
+                 <div>
+                      <div class="testimonials_slider">
+                        <div class="row">
+                           <div class="col-xl-3 col-sm-12">
+                              <div class="testimonials_person">
+                                 <img src="images/Prasad.png" class="img-fluid lazyload" >
+                              </div>
+                           </div>
+                           <div class="col-xl-8 col-sm-12">
+                              <div class="new_testimonial_section">
+                                 <h4> Prasad Bhoir </h4>
+                                 <p> Cloud Administrator <br>
+                                   AWS Cloud Practitioner 
+                                 </p>
+                                 <img src="images/star1.png" class="star lazyload">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="testimonials_content_sec">
+                           <p>The program provides a comprehensive overview of the various cloud computing models, such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). It also covers essential cloud computing technologies such as virtualization, networking, and storage.</p>
+                        </div>
+                      </div>
+                 </div>
+                 <div>
+                      <div class="testimonials_slider">
+                        <div class="row">
+                          <div class="col-xl-3 col-sm-12">
+                             <div class="testimonials_person">
+                                <img src="images/Mrudul.png" class="img-fluid lazyload">
+                             </div>
+                          </div>
+                          <div class="col-xl-8 col-sm-12">
+                             <div class="new_testimonial_section">
+                                <h4> Mrudul Pawar </h4>
+                                <p> Linux System Administrator <br>
+                                   Linux Administrator Advanced 
+                                </p>
+                                <img src="images/star1.png" class="star lazyload">
+                             </div>
+                          </div>
+                        </div>
+                        <div class="testimonials_content_sec">
+                           <p>The Linux Administrator course was well-designed and covered a wide range of topics, including Linux file systems, network configuration, system administration, and security. The course was taught by experienced instructors who were knowledgeable and supportive, and they provided valuable insights into the practical aspects of working as a Linux Administrator.</p>
+                        </div>
+                      </div>
+                 </div>
+                 <div>
+                       <div class="testimonials_slider">
+                          <div class="row">
+                             <div class="col-xl-3 col-sm-12">
+                                <div class="testimonials_person">
+                                   <img src="images/Kalpesh.png" class="img-fluid lazyload">
+                                </div>
+                             </div>
+                             <div class="col-xl-8 col-sm-12">
+                                <div class="new_testimonial_section">
+                                   <h4> Kalpesh Bhoi </h4>
+                                   <p> Linux System Administrtor <br>
+                                         Cloud practictioner + Linux Administrator 
+                                   </p>
+                                   <img src="images/star1.png" class="star lazyload" >
+                                </div>
+                             </div>
+                          </div>
+                             <div class="testimonials_content_sec">
+                                <p> Moreover, the Linux Administrator course has helped me stand out in the job market. Linux is a widely used operating system in many industries, and there is a high demand for professionals with Linux Administration skills. Completing this course has given me a competitive edge in the job market, and I have already received several job offers since completing the course.</p>
+                             </div>
+                       </div>
+                 </div>
+                 <div>
+                       <div class="testimonials_slider">
+                          <div class="row">
+                             <div class="col-xl-3 col-sm-12">
+                                <div class="testimonials_person">
+                                   <img src="images/Rutika.jpg" class="img-fluid lazyload" >
+                                </div>
+                             </div>
+                             <div class="col-xl-8 col-sm-12">
+                                <div class="new_testimonial_section">
+                                   <h4> Rutika Ransing </h4>
+                                   <p> Developer <br>
+                                         Full Stack Java Developer 
+                                   </p>
+                                   <img src="images/star1.png" class="star lazyload">
+                                </div>
+                             </div>
+                          </div>
+                          <div class="testimonials_content_sec">
+                             <p>I am thrilled to share my experience of completing the Full Stack Java Developer course, which has been a transformative learning experience for me. The course provided me with an in-depth understanding of Java programming, and it equipped me with the skills and knowledge necessary to work as a Full Stack Java Developer. </p>
+                          </div>
+                       </div>
+                 </div>
+                 <div>
+                     <div class="testimonials_slider">
+                        <div class="row">
+                           <div class="col-xl-3 col-sm-12">
+                              <div class="testimonials_person">
+                                 <img src="images/Sakshi.png" class="img-fluid lazyload" >
+                              </div>
+                           </div>
+                           <div class="col-xl-8 col-sm-12">
+                              <div class="new_testimonial_section">
+                                 <h4> Sakshi Shinde </h4>
+                                   <p> Developer <br>
+                                    Full Stack Java developer 
+                                   </p>
+                                 <img src="images/star1.png" class="star lazyload" >
+                              </div>
+                           </div>
+                        </div>
+                        <div class="testimonials_content_sec">
+                           <p>The Full Stack Java Developer course was comprehensive and well-structured, covering a wide range of topics, including Java fundamentals, web development, database design, and cloud computing. The course was taught by experienced instructors who were knowledgeable and supportive, and they provided valuable insights into the practical aspects of working as a Full Stack Java Developer.
+                           </p>
+                        </div> 
+                     </div>
+                 </div>     
+              </div>
+            </div>
+        </section>
+     </div> 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+   <style>
+     
+ 
+.demo{ background: #bd986b; }
+.testimonial{
+   background: #fff;
+   text-align: center;
+   padding: 30px 30px 50px;
+   margin: 0 15px 100px;
+   position: relative;
+}
+.testimonial:before,
+.testimonial:after{
+content: "";
+border-top: 40px solid #fff;;
+border-right:  125px solid transparent;
+position: absolute;
+bottom: -40px;
+left: 0;
+}
+/* .testimonial:after{
+    border-right: none;
+    border-left: 125px solid transparent;
+    left: auto;
+    right: 0;
+}
+.testimonial .icon{
+   display: inline-block;
+   font-size: 80px;
+    color: #bd986b;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+.testimonial .description{
+    font-size: 15px;
+    color: #777;
+    text-align: left;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+.testimonial .testimonial-content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.testimonial .pic{
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px #daad86;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+}
+.testimonial .post{
+    display: block;
+    font-size: 14px;
+    color: #ffd9b8;
+}
+.owl-theme .owl-controls{
+    margin-top: 0;
+}
+.owl-theme .owl-controls .owl-page span{
+    width: 32px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #bd986b;
+    margin: 5px;
+   opacity: 1;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+   background: #ffd9b8;
+    border-color: #fff;
+} */
+/* @media only screen and (max-width: 650px) and (min-width: 400px){
+    .testimonial:before{ border-right: 325px solid transparent; }
+    .testimonial:after{ border-left: 325px solid transparent; }
+} */
+   </style>
+</head>
+<body>
+   <div class="demo">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="testimonial-slider" class="owl-carousel">
+      <div class="testimonial">
+     <span class="icon fa fa-quote-left"></span>
+     <p class="description">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
+     </p>
+     <div class="testimonial-content">
+         <div class="pic"><img src="images/img-1.jpg" alt=""></div>
+         <h3 class="title">williamson</h3>
+         <span class="post">Web Developer</span>
+     </div>
+      </div>
+      <div class="testimonial">
+     <span class="icon fa fa-quote-left"></span>
+     <p class="description">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
+     </p>
+     <div class="testimonial-content">
+         <div class="pic"><img src="images/img-2.jpg" alt=""></div>
+         <h3 class="title">Kristina</h3>
+         <span class="post">Web Designer</span>
+     </div>
+      </div>
+      <div class="testimonial">
+     <span class="icon fa fa-quote-left"></span>
+     <p class="description">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
+     </p>
+     <div class="testimonial-content">
+         <div class="pic"><img src="images/img-3.jpg" alt=""></div>
+         <h3 class="title">Steve Thomas</h3>
+         <span class="post">Web Developer</span>
+     </div>
+      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</body>
+</html>
+<script>
+ 
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:3,
+        itemsDesktop:[1000,3],
+        itemsDesktopSmall:[979,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:true,
+        autoPlay:true
+    });
+});
+</script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>

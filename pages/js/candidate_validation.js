@@ -5,9 +5,9 @@ function validation(){
     
     // image validation
     var img1=document.forms['candidate_form']['picture'];
-    // var img2=document.forms['candidate_form']['CV'];
+    var img2=document.forms['candidate_form']['CV'];
     var validExt1=["jpeg","png","jpg"];
-    // var validExt2=["jpeg","png","jpg","pdf"];
+    var validExt2=["jpeg","png","jpg","pdf"];
 
 
     var fname = document.getElementById('fname').value;
@@ -63,45 +63,51 @@ function validation(){
     // }
 
     // radio 2
-    var joining = document.getElementById('joining');
-    var joiningSpan = document.getElementById('joining_span');
-    var selectedValue = joining.value;
+  
 
-    if (selectedValue === '') {
-        joiningSpan.textContent = 'Please select an option.';
-        valid = false;
-    } else {
-        joiningSpan.textContent = ''; // Clear error message
-        valid = true;
-    }
+    // document.querySelector('form').addEventListener('submit', function(event) {
+    //     if (!validateJoining()) {
+    //         event.preventDefault(); // Prevent form submission if validation fails
+    //     }
 
-    document.querySelector('form').addEventListener('submit', function(event) {
-        if (!validateJoining()) {
-            event.preventDefault(); // Prevent form submission if validation fails
-        }
-    });
+    // });
 
     // event.preventDefault(); // Prevent form from submitting
 
-    const radioButtons = document.getElementsByName("radioOption");
-    const gender_span = document.getElementById("gender_span");
-    let isChecked = false;
+    // radiobtn valid 1
 
-    // Check if any radio button is selected
-    for (const radio of radioButtons) {
-        if (radio.checked) {
-            isChecked = true;
-            break;
-        }
-    }
+    // const radioButtons = document.getElementsByName("radioOption");
+    // const gender_span = document.getElementById("gender_span");
+    // let isChecked = false;
 
-    if (isChecked) {
-        gender_span.innerText = ""; // Clear error message if valid
-        // Submit form or do something else
-        document.getElementById("candidate_form").submit(); // Example of form submission
-    } else {
-        gender_span.innerText = "Please select an option.";
-    }
+    // // Check if any radio button is selected
+    // for (const radio of radioButtons) {
+    //     if (radio.checked) {
+    //         gender_span.innerText = "done";
+    //         isChecked = true;
+    //         break;
+    //     }
+    // }
+
+    // if (isChecked) {
+    //     gender_span.innerText = "Done"; // Clear error message if valid
+    //     // Submit form or do something else
+    //     document.getElementById("candidate_form").submit(); // Example of form submission
+    // } else {
+    //     gender_span.innerText = "Please select an option.";
+    // }
+
+    // raiobtn valid 2
+    var genderSpan = document.getElementById('gender_span');
+
+if (!document.querySelector('input[name="gender"]:checked')) {
+    genderSpan.innerHTML = "*Please select your gender";
+    genderSpan.style.display = "block";
+    genderSpan.style.color = "red";
+} else {
+    genderSpan.innerHTML = "";
+    genderSpan.style.display = "none";
+}
 
 
 
@@ -174,21 +180,48 @@ function validation(){
         }
     }
 
-    if( joining.selectedIndex == 0){
-        valid = false;
-        var com = document.getElementById('joining_span')
-        com.innerHTML = "*Please enter your first name"
+    // if( joining.selectedIndex == 0){
+    //     valid = false;
+    //     var com = document.getElementById('joining_span')
+    //     com.innerHTML = "*Please select any one";
 
-    }
+    // }
     
-    else{
-        document.getElementById('joining_span').innerHTML='';
+    // else{
+    //     document.getElementById('joining_span').innerHTML='';
+    // }
+
+    // dropdown validatio 1
+    // console.log('Select element:', joining);
+    // if (joining.selectedIndex == 0) {
+    //     valid = false;
+    //     var com = document.getElementById('joining_span');
+    //     com.innerHTML = "*Please select any one";
+    //     com.style.display = "block"; // add this line
+    //     com.style.color = "red"; // add this line
+    // } else {
+    //     var com = document.getElementById('joining_span');
+    //     com.innerHTML = ""; // clear the error message
+    //     com.style.display = "none"; // add this line
+    // }
+
+
+    var joining = document.getElementById('joining'); // Get the select element
+    var com = document.getElementById('joining_span'); // Get the span element
+    
+    if (joining.value === "Immediate Joining") {
+        com.innerHTML = "*Please select any one";
+        com.style.display = "block";
+        com.style.color = "red";
+    } else {
+        com.innerHTML = "";
+        com.style.display = "none";
     }
 
      if( dob == ''){
         valid = false;
         var com = document.getElementById('dob_span')
-        com.innerHTML = "*Please enter your date of birth"
+        com.innerHTML = "*Please enter your date of birth";
 
     }
     
@@ -250,19 +283,64 @@ function validation(){
 
     // }
 
-    if (img1.value == '') {
-        alert("No image selected...");
-        return false;
+
+    // img valid 2
+
+    // if (img1.value == '') {
+    //     document.getElementById('photo_validate').innerHTML = "No Image selected";
+
+    //     // alert("No image selected...");
+    //     return false;
+    // } else {
+    //     var img_ext1 = img1.value.toLowerCase().split('.').pop(); // get file extension in lowercase
+    //     if (!validExt1.includes(img_ext1)) {
+    //         document.getElementById('photo_validate').innerHTML = "Selected file is not an image...";
+
+    //         // alert("Selected file is not an image...");
+    //         return false;
+    //     } else {
+    //         var fileSize = img1.files[0].size;
+    //         if (fileSize > 1024 * 1024) { // check if file size is greater than 1 MB
+    //         document.getElementById('photo_validate').innerHTML = "Image should be smaller than 1 mb";
+
+    //             // alert("Image should be smaller than 1 mb");
+    //             return false;
+    //         }
+    //     }
+    // }
+
+    // img valid 3
+    // photo validation
+    if ((img1.value == '') ) {
+        document.getElementById('photo_validate').innerHTML = "*No Image selected";
     } else {
         var img_ext1 = img1.value.toLowerCase().split('.').pop(); // get file extension in lowercase
         if (!validExt1.includes(img_ext1)) {
-            alert("Selected file is not an image...");
-            return false;
+            document.getElementById('photo_validate').innerHTML = "Selected file is not an image...";
         } else {
             var fileSize = img1.files[0].size;
             if (fileSize > 1024 * 1024) { // check if file size is greater than 1 MB
-                alert("Image should be smaller than 1 mb");
-                return false;
+                document.getElementById('photo_validate').innerHTML = "Image should be smaller than 1 mb";
+            } else {
+                document.getElementById('photo_validate').innerHTML = ""; // clear the error message
+            }
+        }
+    }
+
+    // CV validation
+    if ((img2.value == '') ) {
+        document.getElementById('CV_validate').innerHTML = "*No Image selected";
+        // document.getElementById('CV_validate').innerHTML = "*No Image selected";
+    } else {
+        var img_ext2 = img2.value.toLowerCase().split('.').pop(); // get file extension in lowercase
+        if (!validExt1.includes(img_ext2)) {
+            document.getElementById('CV_validate').innerHTML = "Selected file is not an image...";
+        } else {
+            var fileSize = img2.files[0].size;
+            if (fileSize > 1024 * 1024) { // check if file size is greater than 1 MB
+                document.getElementById('CV_validate').innerHTML = "Image should be smaller than 1 mb";
+            } else {
+                document.getElementById('CV_validate').innerHTML = ""; // clear the error message
             }
         }
     }

@@ -7,13 +7,18 @@
     <meta name="description" content="Find your dream job in the fitness industry! Browse thousands of gym jobs, including personal trainer, fitness instructor, and management positions. Apply now and start your career in fitness!">
     <meta name="keywords" content="personal trainer jobs, gym manager jobs, fitness instructor jobs, fitness recruitment agencies, fitness instructors near me, hire personal trainers, exercise and fitness job posting, pilates teaching jobs,gym manager jobs">
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/projects/project-2/assets/css/project-2.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-btn-size/bsb-btn-size.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-6/assets/css/hero-6.css">
         
         <!-- Font Awesome -->
         <link href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
@@ -51,25 +56,38 @@ $(document).ready(function(){
 
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); */
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+      .roboto-thin {
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-style: bold;
+      }
 
       nav{
-        /* background: rgb(229,229,235);
-        background: linear-gradient(90deg, rgba(229,229,235,1) 0%, rgba(220,215,191,1) 16%, #FF5B00 93%); */
-        
         background: rgb(0,0,0);
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,91,0,1) 100%);
+        /* background-color: black; */
+        /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(255,91,0,1) 100%); */
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, #444444 100%);
+
       }
 
       @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
       body{
-        /* background: rgb(229,229,235);
-        background: linear-gradient(90deg, rgba(229,229,235,1) 0%, rgba(255,91,0,1) 33%); */
         color: #ffffff;
         background: rgb(0,0,0);
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,91,0,1) 100%);
-        font-family: "Space Grotesk", sans-serif;
+        /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,91,0,1) 100%); */
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, #444444 100%);
+
+        font-family: "Roboto", sans-serif;
         font-style: normal;
+
+      }
+      .testimonials{
+        
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, #444444 100%);
 
       }
       .carousel-item{
@@ -109,6 +127,8 @@ $(document).ready(function(){
       object-fit: cover; 
 
     }
+
+
 /* 
 nav img{
   mix-blend-mode: multiply;
@@ -156,6 +176,15 @@ nav img{
         padding-top: 3rem;
         padding-bottom: 3rem;
       }
+      .sitemap{
+        padding-top: 25px;
+      }
+
+      .social{
+        padding-top: 25px;
+
+
+      }
 }
 
 @media (max-width: 570px) {
@@ -163,19 +192,207 @@ nav img{
         margin-top: 20px;
         padding-top: 10px;
       }
+
+      .sitemap{
+        padding-top: 25px;
+      }
+
+      .social{
+        padding-top: 25px;
+
+
+      }
+
+
+
+}
+
+/* footer nav-link{
+  color: #f7b900;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.4s;
+  padding-top: 5px;
+
+} */
+ .hover{
+  padding-top: 5px;
+ }
+ .hover:hover{
+  
+  color: orange;
+
+ }
+
+ .hover-card:hover{
+  
+  .card-1{
+  border-radius: 0% 15% 0% 15%;
+}
+
+.card-1 img{
+  border-radius: 0% 20% 0% 20% ;
+
+}
+
+.card-2{
+  border-radius: 15% 0% 15% 0% ;
+}
+
+.card-2 img{
+  border-radius: 15% 0% 15% 0% ;
+
+}
+ }
+
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: black;
+  /* background: transparent; */
+  backdrop-filter: blur(10px);
+
+  z-index: 9999;
 }
 
 
-/* image responsive carousel */
+  /* signup animation */
+    @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+          /* clip-path: inset(25% 25% 25% 25%); */
+        }
+        to {
+          opacity: 1;
+          /* transform: translatez(-100px); */
 
+          /* clip-path: inset(0 0 0 0); */
+        }
+      }
+
+      
+
+      .block {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+        /* animation-range: exit 100% cover 0%; */
+      }
+
+
+/* text animation 1 */
+       /* #testimonials-title {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s, transform 1s;
+}
+
+#testimonials-subtitle {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s, transform 1s;
+}
+
+#testimonials-hr {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s, transform 1s;
+}
+
+.bg-light:hover #testimonials-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-light:hover #testimonials-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-light:hover #testimonials-hr {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ */
+ /*text animation 2 */
+/* Add animation to elements when they come into view */
+
+/* .tracking-in-expand {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.tracking-in-expand:scroll(.in-view) {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
+.tracking-in-expand {
+  scroll-snap-align: center;
+}
+
+*/
+
+/* text ani 3 */
+.animate-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animate-element.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* .card-1{
+  border-radius: 0% 15% 0% 15%;
+}
+
+.card-1 img{
+  border-radius: 0% 20% 0% 20% ;
+
+}
+
+.card-2{
+  border-radius: 15% 0% 15% 0% ;
+}
+
+.card-2 img{
+  border-radius: 15% 0% 15% 0% ;
+
+} */
   </style>
 </head>
 <body>
     <!-- navbar -->
-     <nav class="navbar navbar-expand-lg bg-light text-white">
+     <nav class="navbar navbar-expand-lg bg-light text-white navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="logo.jpg" width="50px" height="50px" alt="logo">
+            <img src="logo.png" width="50px" height="50px" alt="logo">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -194,13 +411,15 @@ nav img{
               <li class="nav-item">
                 <a class="nav-link" href="#">Disabled</a>
               </li>
+              <li class="nav-item">
+                <a href="login.php" class="nav-link">
+                  <button class="btn btn-primary me-auto" type="button">Login</button>
+                </a>
+              </li>
             </ul>
             </div>
             </div>
-            <a href="login.php">
-            <button class="btn btn-primary" type="button">Login</button>
-
-            </a>
+           
         </nav> 
 
     
@@ -208,29 +427,29 @@ nav img{
 
         
       
-      <!-- hero section -->
+      <!-- hero section 1 -->
 
-      <section>
+      <!-- <section>
         
         <div id="heroCarousel" class="carousel slide carousel-fade " data-bs-ride="carousel">
           <div class="carousel-inner ">
             <div class="carousel-item active">
-              <img src="timg2.jpg" class="d-block w-100 carousel-img card-img-top " width="auto" height="100%"  alt="Image 1" id="img" >
-              <!-- <div class="carousel-caption d-none d-md-block position-absolute top-50 start-50 translate-middle" style="transform: translate(-50%, -50%);">
+              <img src="Images/gym2.jpg" class="d-block carousel-img card-img-top img-fluid" width="auto" height="100%"  alt="Image 1" id="img" >
+              <div class="carousel-caption d-none d-md-block position-absolute top-50 start-50 translate-middle" style="transform: translate(-50%, -50%);">
                 <h5>Connecting Employers and Employees with Gym</h5>
                 <p>Your description here.</p>
                 <a href="#section2" class="btn custom-btn">Go somewhere</a>
   
-              </div> -->
+              </div>
               
               
             </div>
             <div class="carousel-item card-body ">
-              <img src="timg2.jpg" class="d-block w-100  carousel-img card-img-top" width="auto" height="100%"  alt="Image 2">
+              <img src="Images/gym3.jpg" class="d-block w-100 img-fluid carousel-img card-img-top " width="auto" height="100%"  alt="Image 2">
               <div class="carousel-caption d-none d-md-block position-absolute top-50 start-50 translate-middle" style="transform: translate(-50%, -50%);">
                 <h5>Your Heading 2</h5>
-                <!-- <p>Your description here.</p> -->
-                <!-- <a href="#section2" class="btn btn-primary">Go somewhere</a> -->
+                <p>Your description here.</p>
+                <a href="#section2" class="btn btn-primary">Go somewhere</a>
   
               </div>
             </div>
@@ -245,8 +464,33 @@ nav img{
           </button>
         </div> 
       </section>
-       
+        -->
 
+        <!-- hero 2 -->
+
+        <!-- Hero 6 - Bootstrap Brain Component -->
+<section class=" py-md-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="container-fluid bsb-hero-6 bsb-overlay border border-dark" style="--bsb-overlay-opacity: 0.1; --bsb-overlay-bg-color: var(--bs-light-rgb); background-image: url('Images/banner2.jpg');">
+          <!-- <div class="container-fluid bsb-hero-6 bsb-overlay border border-dark" style="--bsb-overlay-opacity: 0.1; --bsb-overlay-bg-color: var(--bs-light-rgb); background-image: url('Images/banner2.jpg');"> -->
+          <div class="row justify-content-md-center align-items-center">
+            <div class="col-12 col-md-11 col-xl-10">
+              <h2 class="display-1 text-center text-md-start  fw-bold mb-4 ">Welcome to Fitsoul</h2>
+              <p class="lead text-center text-md-start  mb-5  d-flex justify-content-sm-center justify-content-md-start">
+                <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Where every squeak, every rattle, and every wobble finds its solution, ensuring your ride is always smooth and worry-free.</span>
+              </p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-md-start">
+                <a href="#!" class="btn bsb-btn-2xl btn-outline-dark">Explore More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
      
       <!-- login cards -->
@@ -254,11 +498,23 @@ nav img{
 
 
      <div class="container card-p d-flex justify-content-center align-items-center text-black ">
-      <div class="row w-100 h-100">
-        <div class="col-sm-6">
-          <div class="card flex-fill" >
+      <div class="row w-75 h-50">
+
+        <div class="col-sm-6 hover-card" >
+          <div class="card card-2 flex-fill block " >
             <div class="card-body card-p">
-              <img src="photo4.jpeg" class="card-img-top card-img" alt="employers image">
+              <img src="./bg2.jpg" class="card-img-top card-img" width="500px" height="200px" alt="candidate image">
+              <h5 class="card-title text-center">For Candidates</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="candidate_signup2.php" class="btn custom-btn">Sign Up</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 hover-card">
+          <div class="card card-1 flex-fill block" >
+            <div class="card-body card-p">
+              <img src="./bg2.jpg"  class="card-img-top card-img " alt="employers image">
               <h5 class="card-title text-center">For Employers</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="employer_signup2.html" class="btn custom-btn">Sign Up</a>
@@ -266,22 +522,13 @@ nav img{
           </div>
         </div>
     
-        <div class="col-sm-6" id="sec3">
-          <div class="card flex-fill" >
-            <div class="card-body card-p">
-              <img src="photo5.jpeg" class="card-img-top card-img" alt="candidate image">
-              <h5 class="card-title text-center">For Candidates</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="candidate_signup2.html" class="btn custom-btn">Sign Up</a>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
 
     <!-- testimonials -->
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="tetimonials.jpg"  class="d-block w-100" alt="testimonial 1">
@@ -293,29 +540,142 @@ nav img{
           <img src="tetimonials.jpg" width="50px" height="50px" class="d-block w-100" alt="testimonial 3">
         </div>
       </div>
-      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button> -->
+      </button>
+    </div> -->
+
+ <!-- testimonial -->
+<section class="bg-light py-5 py-xl-8 testimonials">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 tracking-in-expand animate-element">
+        <h2 class="mb-4 display-5 text-center animate text text" id="testimonials-title">Testimonials</h2>
+        <p class=" mb-5 text-center lead fs-4 animate text text" id="testimonials-subtitle">We are committed to working with our partners and customers to develop products that make a difference in the world.</p>
+        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+      </div>
     </div>
+  </div>
+
+  <div class="container overflow-hidden">
+    <div class="row gy-2 g-md-2 g-xl-3 bsb-project-2-grid">
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale-up bsb-hover-scale" src="Images/gym6.avif" alt="Photography">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInLeft">Push harder</h3>
+            <!-- <div class="text-white bsb-hover-fadeInRight">Photography</div> -->
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale bsb-hover-scale-up" src="Images/gym2.jpg" alt="Nature">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInUp">Get high paying job</h3>
+            <!-- <div class="text-white bsb-hover-fadeInDown">Nature</div> -->
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale-up bsb-hover-scale" src="Images/gym3.jpg" alt="Adventure">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInLeft">Jobs you deserve</h3>
+            <!-- <div class="text-white bsb-hover-fadeInRight">Adventure</div> -->
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale bsb-hover-scale-up" src="Images/gym4.jpg" alt="Adventure">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInUp">Growth is what you deserve</h3>
+            <!-- <div class="text-white bsb-hover-fadeInDown">Adventure</div> -->
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale bsb-hover-scale-up" src="Images/gym5.jpeg" alt="Photography">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInUp">Golden Leaves</h3>
+            <div class="text-white bsb-hover-fadeInDown">Photography</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale bsb-hover-scale-up" src="Images/gym3.jpg" alt="Design">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInUp">Minimal Notions</h3>
+            <div class="text-white bsb-hover-fadeInDown">Design</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale-up bsb-hover-scale" src="Images/Snake_River_(5mb).jpg" alt="Design">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInLeft">Bright Winks</h3>
+            <div class="text-white bsb-hover-fadeInRight">Design</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-md-4 bsb-project-2-item">
+        <figure class="rounded rounded-3 overflow-hidden bsb-overlay-hover m-0">
+          <a href="#!">
+            <img class="img-fluid bsb-scale-up bsb-hover-scale" src="Images/gym3.jpg" alt="Photography">
+          </a>
+          <figcaption>
+            <h3 class="text-white bsb-hover-fadeInLeft">Innovative Day</h3>
+            <div class="text-white bsb-hover-fadeInRight">Photography</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
     
 
     <!-- about us -->
-<section class="py-3 py-md-5 " id="section2">
+<section class="py-3 py-md-5 pb-5" id="section2">
   <div class="container">
     <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
       <div class="col-12 col-lg-6 col-xl-5">
-        <img class="img-fluid rounded" loading="lazy" src="timg2.jpg" alt="About section">
+        <img class="img-fluid " loading="lazy" src="timg2.jpg" alt="About section" style="border-radius: 10%;">
       </div>
       <div class="col-12 col-lg-6 col-xl-7">
         <div class="row justify-content-xl-center">
           <div class="col-12 col-xl-11">
             <h2 class="mb-3">Who Are We?</h2>
-            <p class="lead fs-4 text-secondary mb-3">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
+            <p class="lead fs-4 text-light mb-3">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
             <!-- <p class="mb-5">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.</p> -->
             <!-- <div class="row gy-4 gy-md-0 gx-xxl-5X">
               <div class="col-12 col-md-6">
@@ -362,11 +722,11 @@ nav img{
 <!-- footer -->
      
     <footer class="footer"> 
-      <div class="container"> 
-          <div class="row"> 
+      <div class="container-fluid pt-5  bg-dark"> 
+          <div class="row container "> 
               <div class="col-md-3"> 
-                  <h2><img src="logo.jpg" width="150px" height="150px" alt="logo"></h2> 
-                  <p> 
+                  <h2><img src="logo.png" width="150px" height="150px" alt="logo"></h2> 
+                  <p class=""> 
                      607 A, Ecstacy BuisnessPark, Acuty Educare 
                      <br>
                      Phone: 1234567890
@@ -378,35 +738,35 @@ nav img{
               <div class="col-md-3"> 
                   
               </div> 
-              <div class="col-md-3"> 
+              <div class="col-md-3 sitemap"> 
                   <h5>Sitemap</h5> 
                   <ul class="list-unstyled"> 
-                      <li><a href="#" class="nav-link">Home</a></li> 
-                      <li><a href="#" class="nav-link">Products</a></li> 
-                      <li><a href="#" class="nav-link">About Us</a></li> 
-                      <li><a href="#" class="nav-link">Terms & Conditions</a></li> 
-                      <li><a href="#" class="nav-link">Privacy Policy</a></li> 
+                      <li><a href="#" class="nav-link hover">Home</a></li> 
+                      <li><a href="#" class="nav-link hover">Products</a></li> 
+                      <li><a href="#" class="nav-link hover">About Us</a></li> 
+                      <li><a href="#" class="nav-link hover">Terms & Conditions</a></li> 
+                      <li><a href="#" class="nav-link hover">Privacy Policy</a></li> 
                   </ul> 
               </div> 
-              <div class="col-md-3"> 
+              <div class="col-md-3 social"> 
                   <h5>Follow Us</h5> 
-                  <ul class="list-inline footer-links"> 
-                      <li class="list-inline-item"> 
+                  <ul class="list-inline footer-links "> 
+                      <li class="list-inline-item px-2 "> 
                           <a href="#"> 
                               <i class="fab fa-facebook"></i> 
                           </a> 
                       </li> 
-                      <li class="list-inline-item"> 
+                      <li class="list-inline-item px-2"> 
                           <a href="#"> 
                               <i class="fab fa-twitter"></i> 
                           </a> 
                       </li> 
-                      <li class="list-inline-item"> 
+                      <li class="list-inline-item px-2"> 
                           <a href="#"> 
                               <i class="fab fa-instagram"></i> 
                           </a> 
                       </li> 
-                      <li class="list-inline-item"> 
+                      <li class="list-inline-item px-2"> 
                           <a href="#"> 
                               <i class="fab fa-linkedin"></i> 
                           </a> 
@@ -441,3 +801,25 @@ nav img{
        
 </body>
 </html>
+<script src="https://unpkg.com/jquery@3.6.1/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/isotope-packery@2.0.1/packery-mode.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/bs-brain@2.0.4/components/projects/project-2/assets/controller/project-2.js"></script>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    const element = entries[0].target;
+    element.classList.add('in-view');
+  } else {
+    const element = entries[0].target;
+    element.classList.remove('in-view');
+  }
+}, { threshold: 1.0 });
+
+const elements = document.querySelectorAll('.animate-element');
+elements.forEach((element) => {
+  observer.observe(element);
+});
+</script>

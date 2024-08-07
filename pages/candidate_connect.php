@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $conn = new mysqli('localhost', 'root', '', 'details_db' );
 
 
+
   $sql = "INSERT INTO candidate_details 
     (candidate_fname,candidate_mname,candidate_lname, candidate_DOB , candidate_gender , candidate_joining , candidate_contact, candidate_contact2,   candidate_email, candidate_password, candidate_address1 , candidate_address2 , candidate_picture, candidate_CV  ) 
     VALUES ('$fname', '$mname', '$lname', '$DOB' , '$gender' , '$joining' , '$contact1',  '$contact2' , '$email', '$password', '$address1', '$address2', '$picture', '$CV' )";
@@ -57,6 +58,7 @@ if ($conn->query($sql) == TRUE) {
 } else {
 echo "<script>alert('Registration Unsuccessful')</script>";
 }
+
 
 
 // final code p-1  

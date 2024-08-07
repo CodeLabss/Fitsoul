@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50vh;
+            color: black;
+            /* padding-bottom: 100vh; */
+        }
+
+        .text {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+          margin: 200px 0; /* add some space between elements */
+          padding-top: 50vh;
+        }
+
+.animate-2 {
+  transform: scale(0.5);
+}
+
+.animate-3 {
+  transform: rotateX(90deg);
+}
+
+.animate-4 {
+  transform: translateX(50px);
+}
+
+.show {
+  opacity: 1;
+  transform: none; /* reset transform when element is in view */
+}
+</style>
+</head>
+<body>
+    <h1 class="text animate-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, delectus!</h1>
+    <h1 class="text animate-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, cum.</h1>
+    <h1 class="text animate-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, reiciendis!</h1>
+    <h1 class="text animate-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, animi!</h1>
+</body>
+</html>
+<script>
+const elements = document.querySelectorAll('.text');
+
+window.addEventListener('scroll', () => {
+  elements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      element.classList.add('show');
+    } else {
+      element.classList.remove('show');
+    }
+  });
+});
+</script>
